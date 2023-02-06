@@ -3,26 +3,18 @@
 Console.Clear();
 Console.Write("Введите число N: ");
 int n = Convert.ToInt32(Console.ReadLine());
-// Console.Write($"{n}. ");
+int count = 1;
+NumbersFor(n, count);
 
-string NumbersFor(int a, int b)
+void NumbersFor(int a, int count)
 {
-    string result = String.Empty;
-    for (int i = a; i >= b; i--)
+    if (count > a)
     {
-        result += $"{i} ";
+        return;
     }
-    return result;
+    else
+    {
+        NumbersFor(a, count + 1);
+        Console.Write(count + " ");
+    }
 }
-Console.WriteLine(NumbersFor(n, 1));
-
-
-
-// Console.Write("Введите число N: ");
-// int n = Convert.ToInt32(Console.ReadLine());
-
-// while (n >= 1)
-// {
-//     Console.Write($"{n} ");
-//     n--;
-// }
